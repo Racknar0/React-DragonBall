@@ -2,15 +2,16 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';
 import queryString from 'query-string';
 import { Characters } from '../models/Characters';
+import Card from '../components/Card';
 
 const SearchScreen = ({ history }) => {
     const location = useLocation();
-    
-    const { q = '' }  = queryString.parse(location.search)
+
+    const { q = '' } = queryString.parse(location.search);
 
     const [inputvalue, setInputvalue] = useState(q);
-    const [characters, setCharacters] = useState([])
-  
+    const [characters, setCharacters] = useState([]);
+
     const handleChange = (e) => {
         const value = e.target.value;
         setInputvalue(value);
@@ -21,25 +22,22 @@ const SearchScreen = ({ history }) => {
         history.push(`?q=${inputvalue}`);
     };
 
-
     const getCharacter = () => {
-      if(inputvalue.trim() !== ''){
-        const value = inputvalue.toLocaleLowerCase()
-        const newValue = Characters.filter(character => character.name.toLocaleLowerCase().includes(value) )
-
-        setCharacters(newValue)
-        console.log(characters);
-      } else {
-        setCharacters([])
-      }
-    }
+        if (inputvalue.trim() !== '') {
+            const value = inputvalue.toLocaleLowerCase();
+            const newValue = Characters.filter((character) =>
+                character.name.toLocaleLowerCase().includes(value)
+            );
+            setCharacters(newValue);
+        } else {
+            setCharacters([]);
+        }
+    };
 
     useEffect(() => {
-      getCharacter()
-      console.log(characters);
-    }, [q])
-    
-    
+        getCharacter();
+    }, [q]);
+
     return (
         <div className="container mt-3">
             <h1>SearchScreen</h1>
@@ -63,6 +61,18 @@ const SearchScreen = ({ history }) => {
                             Search
                         </button>
                     </form>
+                </div>
+                <div className="col-6">
+                    <h2>Results: {characters.length}</h2>
+                    {characters.length === 0 && (
+                        <div className="alert alert-warning text-center">
+                            Please Search a Character
+                        </div>
+                    )}
+
+                    {
+                      characters.map(character => <Card key={character.id} {...character} />)
+                    }
                 </div>
             </div>
         </div>
