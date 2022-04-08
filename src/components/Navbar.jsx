@@ -6,7 +6,7 @@ const Navbar = () => {
     const history = useHistory()
 
     const handleLogout = () => {
-        console.log(history);
+        history.replace('/login')
     }
 
     return (
