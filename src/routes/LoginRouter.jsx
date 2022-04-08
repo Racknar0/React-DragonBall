@@ -1,17 +1,23 @@
-import React from 'react'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import LoginScreen from '../pages/LoginScreen'
-import AppRouter from './AppRouter'
+import { useContext } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import LoginScreen from '../pages/LoginScreen';
+import AppRouter from './AppRouter';
+import PublicRouter from './PublicRouter';
 
 const LoginRouter = () => {
-  return (
-    <Router>
-        <AppRouter />
-        <Switch>
-            <Route exact path={'/login'} component={LoginScreen} />
-        </Switch>
-    </Router>
-  )
-}
+    const { log } = useContext(AuthContext);
+    return (
+        <Router>
+            {/* <AppRouter /> */}
+            {/* <Route exact path={'/login'} component={LoginScreen} /> */}
 
-export default LoginRouter
+
+            <Switch>
+                <PublicRouter path='/login' auth={log} component={LoginScreen} />
+            </Switch>
+        </Router>
+    );
+};
+
+export default LoginRouter;
