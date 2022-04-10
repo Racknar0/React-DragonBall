@@ -1,11 +1,18 @@
 import { useHistory, NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
+import { authTypes } from '../types/authTypes';
 
 
 const Navbar = () => {
 
     const history = useHistory()
 
+    const {dispatch} = useContext(AuthContext)
+
     const handleLogout = () => {
+
+        dispatch({type: authTypes.logout})
         history.replace('/login')
     }
 

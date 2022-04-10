@@ -12,7 +12,7 @@ const Card = ({ name, description, type, id }) => {
             }}
         >
 
-            <img className='card-img-top' src={path} alt={id} />
+            <img loading='lazy' className='card-img-top' src={path} alt={id} />
 
             <div className="card-body">
                 <h3 className='card-title'>{name}</h3>
