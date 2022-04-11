@@ -17,7 +17,7 @@ const CharacterScreen = () => {
         <div className='col-8 d-flex justify-content-center'>
             <img className='img-thumbnail mt-3 img-fluid ' src={path} alt={id} style={{
                 /* width: '100%', */
-                maxHeight: '400px'
+                height: '400px'
             }} />
         </div>
         <div className='col-4'>

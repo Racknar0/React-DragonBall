@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Card = ({ name, description, type, id }) => {
+const Card = ({ name, type, id }) => {
     const path = `/assets/${type}-${id}.png`;
 
     return (
@@ -11,15 +11,24 @@ const Card = ({ name, description, type, id }) => {
                 width: 200,
             }}
         >
-
-            <img loading='lazy' className='card-img-top' src={path} alt={id} />
+            <img
+                style={{
+                    height: 200,
+                    width: 170,
+                }}
+                loading="lazy"
+                className="card-img-top"
+                src={path}
+                alt={id}
+            />
 
             <div className="card-body">
-                <h3 className='card-title'>{name}</h3>
-                <p className='card-text'></p>
-                <Link className='card-link' to={`/character/${id}`}>
-                    Ver mas...
-                </Link>
+                <h3 className="card-title">{name}</h3>
+                <p className="card-text">
+                    <Link className="card-link" to={`/character/${id}`}>
+                        Ver mas...
+                    </Link>
+                </p>
             </div>
         </div>
     );
