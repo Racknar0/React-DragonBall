@@ -22,6 +22,8 @@
 <a href="https://www.w3schools.com/css/" target="_blank"
     rel="noreferrer"><img src="https://github.com/coherencez/tech-logos/blob/master/jslogo.png?raw=true" alt="JS" width="100" height="100" /></a>
 <a href="https://www.w3schools.com/css/" target="_blank"
+    rel="noreferrer"><img src="https://github.com/coherencez/tech-logos/blob/master/bootstrap.png?raw=true" alt="BOOTSTRAP" width="100" height="100" /></a>
+<a href="https://www.w3schools.com/css/" target="_blank"
     rel="noreferrer"><img src="https://github.com/coherencez/tech-logos/blob/master/css3.png?raw=true" alt="CSS" width="70" height="100" /></a>
 <a href="https://www.w3schools.com/css/" target="_blank"
     rel="noreferrer"><img src="https://github.com/coherencez/tech-logos/blob/master/html5.png?raw=true" alt="HTML5" width="100" height="100" /></a>
