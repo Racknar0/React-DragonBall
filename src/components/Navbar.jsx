@@ -1,4 +1,4 @@
-import { useHistory, NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { authTypes } from '../types/authTypes';
@@ -6,20 +6,23 @@ import { authTypes } from '../types/authTypes';
 
 const Navbar = () => {
 
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const {dispatch} = useContext(AuthContext)
 
     const handleLogout = () => {
 
         dispatch({type: authTypes.logout})
-        history.replace('/login')
+        navigate('/login')
     }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-info">
             <div className="container-fluid">
-                <h2 className="navbar-brand">Dragon Ball App</h2>
+                <a href="/mans" className='text-decoration-none fw-bold'>
+                    <h2 className="navbar-brand">Dragon Ball App</h2>
+                </a>
+                
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -33,32 +36,32 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav me-auto">
-                        <li className="nav-item">
+                        <li className="nav-item me-2">
                             <NavLink
-                                className="nav-link"
+                                className={({isActive}) => `${isActive ? 'fw-bold active text-white text-decoration-none' : "fw-bold text-dark text-decoration-none"}`} 
                                 aria-current="page"
                                 to="/mans"
-                                activeClassName="active text-white"
+                                
                             >
                                 Mans
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item me-2">
                             <NavLink
-                                className="nav-link"
+                                className={({isActive}) => `${isActive ? 'fw-bold active text-white text-decoration-none' : "fw-bold text-dark text-decoration-none"}`} 
                                 aria-current="page"
                                 to="/womans"
-                                activeClassName="active text-white"
+                               
                             >
                                 Womans
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item me-2">
                             <NavLink
-                                className="nav-link"
+                                className={({isActive}) => `${isActive ? 'fw-bold active text-white decoration text-decoration-none' : "fw-bold text-dark text-decoration-none"}`} 
                                 aria-current="page"
                                 to="/search"
-                                activeClassName="active text-white"
+                                
                             >
                                 Search
                             </NavLink>

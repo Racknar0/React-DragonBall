@@ -1,15 +1,16 @@
 import React from 'react'
-import { useParams } from 'react-router'
 import { Characters } from '../models/Characters'
+import { useNavigate, useParams } from 'react-router-dom';
 
-const CharacterScreen = ({history}) => {
+const CharacterScreen = () => {
 
     const {id} = useParams()
+    const navigate = useNavigate()
     const {type, description, name} = Characters.find(character => character.id === id)
     const path = `/assets/${type}-${id}.png`
 
     const handleBack = () => {
-        history.goBack()
+        navigate(-1)
     }
   return (
     <div className='container row mt-5'>

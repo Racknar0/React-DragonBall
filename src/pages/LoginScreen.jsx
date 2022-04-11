@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 import { authTypes } from '../types/authTypes'
 
@@ -7,13 +7,13 @@ const LoginScreen = () => {
 
   const {dispatch} = useContext(AuthContext)
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleLogin = () => {
 
     dispatch({type: authTypes.login})
 
-    history.push('/')
+    navigate('/')
   }
 
   return (
