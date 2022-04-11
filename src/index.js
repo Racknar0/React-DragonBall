@@ -1,16 +1,15 @@
 import React from 'react';
-import ReactDOM, { hydrate, render } from 'react-dom';
+import { hydrate, render } from 'react-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 
-const root = document.getElementById("root");
-
-if (root.hasChildNodes()) {
-  hydrate(<App />, root);
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
 } else {
-  render(<App />, root);
+  render(<App />, rootElement);
 }
 
 /* ReactDOM.render(
