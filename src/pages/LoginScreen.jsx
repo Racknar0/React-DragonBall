@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 import { authTypes } from '../types/authTypes'
 
+import './LoginScreen.css'
+
 const LoginScreen = () => {
 
   const {dispatch} = useContext(AuthContext)
@@ -17,10 +19,9 @@ const LoginScreen = () => {
   }
 
   return (
-    <div className='container mt-5 text-center'>
+    <div className='container mt-5 text-center containerLogin'>
         <img src="/assets/animate.gif" alt="animacion" />
-        <h1 className='my-3'>Login Screen</h1>
-        <button className='btn btn-primary' onClick={handleLogin}>Login</button>
+        <button className='botonLogin' onClick={handleLogin}>Login</button>
     </div>
   )
 }

@@ -1,0 +1,10 @@
+.background {
+
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('./wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+

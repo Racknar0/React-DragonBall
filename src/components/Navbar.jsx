@@ -3,6 +3,8 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { authTypes } from '../types/authTypes';
 
+import './NavBar.css';
+
 const Navbar = () => {
     const navigate = useNavigate();
 
@@ -14,7 +16,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-info">
+        <nav className="navbar nabbarMain navbar-expand-lg navbar-light bg-info">
             <div className="container-fluid">
                 <h2 className="navbar-brand">DB App</h2>
                 <button
@@ -34,7 +36,7 @@ const Navbar = () => {
                             <NavLink
                                 className={({ isActive }) =>
                                 `nav-link ${
-                                    isActive ? 'active text-white' : ''
+                                    isActive ? 'active text-primary' : ''
                                 }`
                             }
                                 aria-current="page"
@@ -47,7 +49,7 @@ const Navbar = () => {
                             <NavLink
                                 className={({ isActive }) =>
                                 `nav-link ${
-                                    isActive ? 'active text-white' : ''
+                                    isActive ? 'active text-primary' : ''
                                 }`
                             }
                                 aria-current="page"
@@ -60,7 +62,7 @@ const Navbar = () => {
                             <NavLink
                                 className={({ isActive }) =>
                                 `nav-link ${
-                                    isActive ? 'active text-white' : ''
+                                    isActive ? 'active text-primary' : ''
                                 }`
                             }
                                 aria-current="page"
